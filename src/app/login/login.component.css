@@ -15,3 +15,12 @@
   top:50%;
   margin-left:-200px;
 }
+
+.signed-in {
+  display: inline-block;
+  text-align: center;
+  position:relative;
+  left:50%;
+  top:50%;
+  margin-left:200px;
+}
