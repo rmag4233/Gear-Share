@@ -36,6 +36,7 @@ export class AuthService {
       )
   }
 
+
   signUp(email: string, password: string, password_confirmation: string) {
     // Create the credentials object.
     const credentials = {
@@ -57,6 +58,7 @@ export class AuthService {
       )
   }
 
+
   signOut() {
     // Create the configuration object to be able to store the Headers > Authentication
     let config = {}
@@ -71,6 +73,7 @@ export class AuthService {
         err => console.log(err)
       )
   }
+
 
   changePassword(oldPassword: string, newPassword: string) {
     // Create the passwords data object to send.
