@@ -5,7 +5,6 @@ import { HttpModule } from '@angular/http';
 import { AppRoutingModule } from './app-routing.module';
 import { GearsRoutingModule } from './gears/gear-routing.module';
 import { GearsModule } from './gears/gears.module';
-import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
