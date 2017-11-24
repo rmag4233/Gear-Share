@@ -3,12 +3,14 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { AppRoutingModule } from './app-routing.module';
-
+import { GearsRoutingModule } from './gears/gear-routing.module';
+import { GearsModule } from './gears/gears.module';
+import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
 
-import { AuthService } from './services/auth/auth.service'
+import { AuthService } from './services/auth/auth.service';
 
 
 @NgModule({
@@ -20,7 +22,9 @@ import { AuthService } from './services/auth/auth.service'
     BrowserModule,
     FormsModule,
     HttpModule,
-    AppRoutingModule
+    AppRoutingModule,
+    GearsModule,
+    GearsRoutingModule
   ],
   providers: [AuthService],
   bootstrap: [AppComponent]
