@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute }   from '@angular/router';
+import { GearsService } from '../gears.service';
 
 @Component({
   selector: 'app-gear-show',
@@ -7,9 +9,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class GearShowComponent implements OnInit {
 
-  constructor() { }
+	oneGear;
+
+  constructor(
+  	private route : ActivatedRoute,
+  	private gearsService : GearsService
+  ) { }
 
   ngOnInit() {
+  	this.route.params.forEach( param => {
+  		this.gearsService.getOneGear(param.id)
+  		.subscribe(response => {
+  			console.log(response.json());
+  			this.oneGear = response.json();
+  		});
+  	});
   }
 
 }

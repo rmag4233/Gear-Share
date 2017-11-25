@@ -1,3 +1,11 @@
 <p>
   gear-show works!
 </p>
+
+<div *ngIf="oneGear">
+	<h2>{{oneGear.title}}</h2>
+	<h3>{{oneGear.description}}</h3>
+	<h3>{{oneGear.price}}</h3>
+	<h3>{{oneGear.availability}}</h3>
+	<img [src]="oneGear.image_URL">
+</div>

@@ -7,6 +7,7 @@ import { GearsComponent } from './gears.component';
 import { GearNewComponent } from './gear-new/gear-new.component';
 import { GearEditComponent } from './gear-edit/gear-edit.component';
 import { GearShowComponent } from './gear-show/gear-show.component';
+import { GearsService } from './gears.service'
 
 @NgModule({
   imports: [
@@ -15,6 +16,6 @@ import { GearShowComponent } from './gear-show/gear-show.component';
     FormsModule
   ],
   declarations: [GearIndexComponent, GearsComponent, GearNewComponent, GearEditComponent, GearShowComponent],
-  providers: []
+  providers: [GearsService]
 })
 export class GearsModule { }
