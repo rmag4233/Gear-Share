@@ -10,12 +10,14 @@ import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
 
 import { AuthService } from './services/auth/auth.service';
+import { MyDashboardComponent } from './my-dashboard/my-dashboard.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    LoginComponent
+    LoginComponent,
+    MyDashboardComponent
   ],
   imports: [
     BrowserModule,
