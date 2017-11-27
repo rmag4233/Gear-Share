@@ -9,7 +9,7 @@ export class GearsService {
 		return this.http.get(environment.apiServer + '/gears/' + gearId);
 	}
 
-  saveGear(title: string, description: string, price: string, availability: boolean, image_URL: string) {
+  saveGear(title: string, description: string, price: string, availability: string, image_URL: string) {
 		console.log('title being sent to api is ', title);
     let gear = {
       'gear': {
