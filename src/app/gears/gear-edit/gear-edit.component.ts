@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { GearsService } from '../gears.service';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-gear-edit',
@@ -7,9 +9,32 @@ import { Component, OnInit } from '@angular/core';
 })
 export class GearEditComponent implements OnInit {
 
-  constructor() { }
+  updatedGear = <any>{};
+
+  constructor(
+    private route : ActivatedRoute,
+    private router : Router,
+    private gearsService : GearsService
+  ) { }
 
   ngOnInit() {
+    this.route.params.forEach( param => {
+      this.gearsService.getOneGear(param.id)
+      .subscribe(response => {
+        console.log(response.json());
+        this.updatedGear = response.json();
+      });
+    });
+  }
+
+  updateGear(updatedGear) {
+    console.log('updated Gear ID is ', this.updatedGear.gear.id)
+    this.gearsService.updateGear(this.updatedGear.title, this.updatedGear.description, this.updatedGear.price, this.updatedGear.availability, this.updatedGear.image_URL, this.updatedGear.gear.id)
+    .subscribe(response => {
+      console.log(response.json());
+      let gear = response.json();
+      this.router.navigate(["/gear/" + gear.gear.id])
+    })
   }
 
 }

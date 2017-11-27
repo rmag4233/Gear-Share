@@ -1,3 +1,21 @@
-<p>
-  gear-edit works!
-</p>
+<h2>Update Gear</h2>
+
+<form (ngSubmit)="updateGear(updatedGear)">
+  <label for="title">Title:</label>
+  <input name="title" [(ngModel)]="updatedGear.title">
+
+  <label for="description">Description:</label>
+  <input name="description" [(ngModel)]="updatedGear.description">
+
+  <label for="price">Price:</label>
+  <input name="price" [(ngModel)]="updatedGear.price">
+
+  <label for="availability">Available for rent?:</label>
+  <input type="radio" name="availability" value="Yes" [(ngModel)]="updatedGear.availability"> Yes
+  <input type="radio" name="availability" value="No" [(ngModel)]="updatedGear.availability"> No<br>
+
+  <label for="image_URL">Photograph:</label>
+  <input name="image_URL" [(ngModel)]="updatedGear.image_URL">
+
+  <input type="submit" value="Update">
+</form>

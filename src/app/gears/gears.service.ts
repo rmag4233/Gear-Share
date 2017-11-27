@@ -27,6 +27,19 @@ export class GearsService {
     return this.http.get(environment.apiServer + '/gears')
   }
 
+  updateGear(title: string, description: string, price: string, availability: string, image_URL: string, id) {
+    let gear = {
+      'gear': {
+        'title': title,
+        'description': description,
+        'price': price,
+        'availability': availability,
+        'image_URL': image_URL
+      }
+    }
+    return this.http.patch(environment.apiServer + '/gears/' + id, gear)
+  }
+
   constructor(private http: Http) { }
 
 }
