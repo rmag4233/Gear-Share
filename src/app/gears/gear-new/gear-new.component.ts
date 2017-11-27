@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { GearsService } from '../gears.service';
 import { Router } from '@angular/router';
+import { AuthService } from '../../services/auth/auth.service'
 
 @Component({
   selector: 'app-gear-new',
@@ -13,7 +14,8 @@ export class GearNewComponent implements OnInit {
 
   constructor(
     private gearsService : GearsService,
-    private router : Router
+    private router : Router,
+    public auth : AuthService
   ) { }
 
   ngOnInit() {
