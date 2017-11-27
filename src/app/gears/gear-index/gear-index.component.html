@@ -1,7 +1,7 @@
 <h2>Gear:</h2>
 <div class="gears">
   <div class="row" *ngFor="let gear of allGears">
-    <ul>
+    <ul style="list-style: none;">
       <li>
         <h2>
           <a routerLink="/gear/{{gear.id}}">
@@ -19,6 +19,14 @@
         <h4>
           {{gear.price}}
         </h4>
+      </li>
+      <li>
+        <a routerLink="/gear/edit/{{gear.id}}">
+          Edit
+        </a>
+        <form (ngSubmit)="deleteGear(gear)">
+          <input type="submit" value="Delete"/>
+        </form>
       </li>
     </ul>
   </div>

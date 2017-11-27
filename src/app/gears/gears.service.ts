@@ -40,6 +40,11 @@ export class GearsService {
     return this.http.patch(environment.apiServer + '/gears/' + id, gear)
   }
 
+  deleteGear(gear) {
+    console.log('gear is ', gear)
+    return this.http.delete(environment.apiServer + '/gears/' + gear.id)
+  }
+
   constructor(private http: Http) { }
 
 }

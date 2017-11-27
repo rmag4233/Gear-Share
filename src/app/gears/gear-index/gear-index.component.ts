@@ -10,6 +10,14 @@ export class GearIndexComponent implements OnInit {
 
   allGears = [];
 
+  deleteGear(deletedGear) {
+    this.gearsService.deleteGear(deletedGear)
+    .subscribe(response => {
+      let gearIndex = this.allGears.indexOf(deletedGear);
+      this.allGears.splice(gearIndex, 1);
+    });
+  }
+
   constructor(private gearsService : GearsService) { }
 
   ngOnInit() {
