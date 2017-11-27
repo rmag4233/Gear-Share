@@ -23,6 +23,10 @@ export class GearsService {
 		return this.http.post(environment.apiServer + '/gears', gear);
 	}
 
+  getAllGears() {
+    return this.http.get(environment.apiServer + '/gears')
+  }
+
   constructor(private http: Http) { }
 
 }

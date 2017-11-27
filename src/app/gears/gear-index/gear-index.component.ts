@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { GearsService } from '../gears.service'
 
 @Component({
   selector: 'app-gear-index',
@@ -7,9 +8,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class GearIndexComponent implements OnInit {
 
-  constructor() { }
+  allGears = [];
+
+  constructor(private gearsService : GearsService) { }
 
   ngOnInit() {
+    this.gearsService.getAllGears()
+    .subscribe(response => {
+				console.log(response.json());
+				this.allGears = response.json()
+			});
   }
 
 }

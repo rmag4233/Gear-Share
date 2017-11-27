@@ -1,0 +1,15 @@
+img {
+  height: 200px;
+  width: 200px;
+}
+
+.row {
+  height: 400px;
+  border-style: groove;
+  border-width: 5px;
+  width: 400px;
+  float: left;
+  align-items: center;
+  vertical-align: middle;
+  display: inline-block;
+}
