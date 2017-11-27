@@ -1,18 +1,22 @@
 <div class="login-form">
 <div *ngIf="!auth.user" class="container">
   <h3>Sign Up:</h3>
-  <input [(ngModel)]="newUser.email" type="email" required placeholder="Email"/>
-  <input [(ngModel)]="newUser.password" type="password" required placeholder="Password"/>
-  <input [(ngModel)]="newUser.password_confirmation" required type="password" placeholder="Confirm Passsword"/>
-  <input (click)="signUp()" type="submit" value="Sign Up"/>
+  <form ngNativeValidate>
+    <input [(ngModel)]="newUser.email" type="email" required placeholder="Email"/>
+    <input [(ngModel)]="newUser.password" type="password" required placeholder="Password"/>
+    <input [(ngModel)]="newUser.password_confirmation" required type="password" placeholder="Confirm Passsword"/>
+    <input (click)="signUp()" type="submit" value="Sign Up"/>
+  </form>
 </div>
 <br>
 
 <div *ngIf="!auth.user" class="container">
   <h3>Sign In:</h3>
-  <input [(ngModel)]="user.email" type="email" required placeholder="Email"/>
-  <input [(ngModel)]="user.password" type="password" required placeholder="Password"/>
-  <input (click)="signIn()" type="submit" value="Log in"/>
+  <form ngNativeValidate>
+    <input [(ngModel)]="user.email" type="email" required placeholder="Email"/>
+    <input [(ngModel)]="user.password" type="password" required placeholder="Password"/>
+    <input (click)="signIn()" type="submit" value="Log in"/>
+  </form>
 </div>
 <br>
 </div>
@@ -21,10 +25,11 @@
 
 <div *ngIf="auth.user" class="container">
   <h3>Change Password:</h3>
-  <input [(ngModel)]="oldPassword" type="password" required placeholder="Old"/>
-  <input [(ngModel)]="newPassword" type="password" required placeholder="New"/>
-  <input (click)="changePassword()" type="submit" required value="Change"/>
-
+  <form ngNativeValidate>
+    <input [(ngModel)]="oldPassword" type="password" required placeholder="Old"/>
+    <input [(ngModel)]="newPassword" type="password" required placeholder="New"/>
+    <input (click)="changePassword()" type="submit" required value="Change"/>
+  </form>
 </div>
 <br>
 

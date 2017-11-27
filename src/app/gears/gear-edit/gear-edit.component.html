@@ -1,21 +1,21 @@
 <h2>Update Gear</h2>
 
-<form (ngSubmit)="updateGear(updatedGear)">
+<form (ngSubmit)="updateGear(updatedGear)" ngNativeValidate>
   <label for="title">Title:</label>
-  <input required name="title" [(ngModel)]="updatedGear.title">
+  <input required name="title" [(ngModel)]="updatedGear.title" required>
 <br>
   <label for="description">Description:</label>
-  <input required name="description" [(ngModel)]="updatedGear.description">
+  <input required name="description" [(ngModel)]="updatedGear.description" required>
 <br>
   <label for="price">Price:</label>
-  <input required name="price" [(ngModel)]="updatedGear.price">
+  <input required name="price" [(ngModel)]="updatedGear.price" required>
 <br>
   <label for="availability">Available for rent?:</label>
   <input type="radio" name="availability" value="Yes" [(ngModel)]="updatedGear.availability"> Yes
   <input type="radio" name="availability" value="No" [(ngModel)]="updatedGear.availability"> No<br>
 
   <label for="image_URL">Photograph:</label>
-  <input required name="image_URL" [(ngModel)]="updatedGear.image_URL">
+  <input required name="image_URL" [(ngModel)]="updatedGear.image_URL" required>
 
   <input type="submit" value="Update">
 </form>
