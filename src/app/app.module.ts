@@ -4,13 +4,15 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { AppRoutingModule } from './app-routing.module';
 import { GearsRoutingModule } from './gears/gear-routing.module';
+import { MyDashboardRoutingModule } from './my-dashboard/my-dashboard-routing.module';
 import { GearsModule } from './gears/gears.module';
+import { MyDashboardModule } from './my-dashboard/my-dashboard.module';
 
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
+import { MyDashboardComponent } from './my-dashboard/my-dashboard.component';
 
 import { AuthService } from './services/auth/auth.service';
-import { MyDashboardComponent } from './my-dashboard/my-dashboard.component';
 
 
 @NgModule({
@@ -25,7 +27,9 @@ import { MyDashboardComponent } from './my-dashboard/my-dashboard.component';
     HttpModule,
     AppRoutingModule,
     GearsModule,
-    GearsRoutingModule
+    GearsRoutingModule,
+    MyDashboardModule,
+    MyDashboardRoutingModule
   ],
   providers: [AuthService],
   bootstrap: [AppComponent]
