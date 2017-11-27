@@ -45,12 +45,16 @@ export class GearsService {
         'image_URL': image_URL
       }
     }
-    return this.http.patch(environment.apiServer + '/gears/' + id, gear)
+    let config = {}
+    config['headers'] = { Authorization: 'Token token=' + this.getUserToken()}
+    return this.http.patch(environment.apiServer + '/gears/' + id, gear, config)
   }
 
   deleteGear(gear) {
     console.log('gear is ', gear)
-    return this.http.delete(environment.apiServer + '/gears/' + gear.id)
+    let config = {}
+    config['headers'] = { Authorization: 'Token token=' + this.getUserToken()}
+    return this.http.delete(environment.apiServer + '/gears/' + gear.id, config)
   }
 
   constructor(private http: Http, public auth : AuthService) { }
