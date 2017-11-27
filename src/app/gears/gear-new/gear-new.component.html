@@ -1,3 +1,21 @@
-<p>
-  gear-new works!
-</p>
+<h2>Add New Piece of Equipment</h2>
+
+<form (ngSubmit)="saveGear(newGear)">
+  <label for="title">Title:</label>
+  <input name="title" [(ngModel)]="newGear.title">
+
+  <label for="description">Description:</label>
+  <input name="description" [(ngModel)]="newGear.description">
+
+  <label for="price">Price:</label>
+  <input name="price" [(ngModel)]="newGear.price">
+
+  <label for="availability">Available for rent?:</label>
+  <input type="radio" name="availability" value="true" [(ngModel)]="newGear.availability"> Yes
+  <input type="radio" name="availability" value="false" [(ngModel)]="newGear.availability"> No<br>
+
+  <label for="image_URL">Photograph:</label>
+  <input name="image_URL" [(ngModel)]="newGear.image_URL">
+
+  <input type="submit" value="Create">
+</form>
