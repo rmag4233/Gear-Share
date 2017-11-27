@@ -20,14 +20,6 @@
           {{gear.price}}
         </h4>
       </li>
-      <li>
-        <a routerLink="/gear/edit/{{gear.id}}">
-          Edit
-        </a>
-        <form (ngSubmit)="deleteGear(gear)">
-          <input type="submit" value="Delete"/>
-        </form>
-      </li>
     </ul>
   </div>
 </div>

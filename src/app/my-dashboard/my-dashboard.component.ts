@@ -10,8 +10,6 @@ import { GearsService } from '../gears/gears.service';
 })
 export class MyDashboardComponent implements OnInit {
 
-  myGears = [];
-
   constructor(private router : Router, private gearsService : GearsService) { }
 
   ngOnInit() {
@@ -22,17 +20,6 @@ export class MyDashboardComponent implements OnInit {
   }
 
   moveToShow() {
-    this.gearsService.getAllGears()
-    .subscribe(response => {
-				console.log(response.json().gears);
-				let allGear = response.json().gears
-        for (let i = 0; i < allGear.length; i++) {
-          if (allGear[i].user_id === 38) {
-            this.myGears.push(allGear[i])
-          }
-        }
-        this.router.navigate(['/gear'])
-			});
+        this.router.navigate(["my-dashboard/my-gear"])
+			}
   }
-
-}
