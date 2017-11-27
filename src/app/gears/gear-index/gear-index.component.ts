@@ -15,8 +15,8 @@ export class GearIndexComponent implements OnInit {
   ngOnInit() {
     this.gearsService.getAllGears()
     .subscribe(response => {
-				console.log(response.json());
-				this.allGears = response.json()
+				console.log(response.json().gears);
+				this.allGears = response.json().gears
 			});
   }
 
