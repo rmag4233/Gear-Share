@@ -1,13 +1,13 @@
 img {
-  height: 150px;
-  width: 150px;
+  height: 100px;
+  width: 100px;
 }
 
 .row {
-  height: 400px;
+  height: 300px;
   border-style: groove;
   border-width: 5px;
-  width: 400px;
+  width: 300px;
   float: left;
   align-items: center;
   vertical-align: middle;

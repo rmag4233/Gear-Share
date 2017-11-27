@@ -1,5 +1,19 @@
-<div class="my-dashboard">
-  <button class="button" (click)='moveToCreate()'>Add Gear</button>
-  <button class="button" (click)='moveToShow()'>Show My Gear</button>
-</div>
+
+  <div class="row">
+    <div class="Add-photo">
+      <img class="img-circle" src="https://static.reverb.com/assets/homepage/open-graph-a1b38d66110f7e8c1b90ad59ee7f57ef.jpg" alt="instruments image" width="150" height="150">
+    </div>
+    <div>
+      <button class="button" (click)='moveToCreate()'>Add Gear</button>
+    </div>
+  </div>
+  <div class="row">
+    <div class="show-photo">
+      <img class="img-circle" src="https://i.pinimg.com/736x/40/a4/d4/40a4d48d626c1eff5f76660cf3011069--guitar-effects-pedals-guitar-pedals.jpg" alt="blog image" width="150" height="150">
+    </div>
+    <div>
+      <button class="button" (click)='moveToShow()'>Show My Gear</button>
+    </div>
+  </div>
+
 <router-outlet></router-outlet>

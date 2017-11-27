@@ -1,15 +1,15 @@
-<h2>Add New Piece of Equipment</h2>
+<h2>Add New Gear For Rent</h2>
 <h1>{{auth.user.email}}</h1>
 <form (ngSubmit)="saveGear(newGear)">
   <label for="title">Title:</label>
   <input name="title" [(ngModel)]="newGear.title">
-
+  <br>
   <label for="description">Description:</label>
   <input name="description" [(ngModel)]="newGear.description">
-
+  <br>
   <label for="price">Price:</label>
   <input name="price" [(ngModel)]="newGear.price">
-
+  <br>
   <label for="availability">Available for rent?:</label>
   <input type="radio" name="availability" value="Yes" [(ngModel)]="newGear.availability"> Yes
   <input type="radio" name="availability" value="No" [(ngModel)]="newGear.availability"> No<br>

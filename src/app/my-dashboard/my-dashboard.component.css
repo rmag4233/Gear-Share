@@ -9,8 +9,17 @@
     font-size: 16px;
     margin: 4px 2px;
     cursor: pointer;
+    align-items: center;
 }
 
-.my-dashboard {
-  text-align: center;
+.row {
+  height: 300px;
+  width: 300px;
+  align-items: center;
+  vertical-align: middle;
+  display: inline-block;
+}
+
+.img-circle {
+    border-radius: 50%;
 }
