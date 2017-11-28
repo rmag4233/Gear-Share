@@ -12,6 +12,16 @@ export class GearShowComponent implements OnInit {
 
 	oneGear;
   error: any;
+  success: any;
+
+  requestLoan(gear) {
+    this.gearsService.requestLoan(gear.id, gear.user_id, this.auth.user.id)
+    .subscribe(response => {
+      this.success = response;
+      this.error = null
+    },
+    err => this.error = err)
+  }
 
   constructor(
   	private route : ActivatedRoute,

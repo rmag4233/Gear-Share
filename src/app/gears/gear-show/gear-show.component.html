@@ -2,9 +2,15 @@
 <div *ngIf="oneGear">
 	<h2>{{oneGear.gear.title}}</h2>
   <img [src]="oneGear.gear.image_URL">
-	<p>{{oneGear.gear.description}}</p>
-	<h3>Price: {{oneGear.gear.price}}</h3>
-	<h3>Available? {{oneGear.gear.availability}}</h3>
+	<h3>Description:</h3>
+  <p>{{oneGear.gear.description}}</p>
+	<h3>Price:</h3>
+  <p>{{oneGear.gear.price}}</p>
+	<h3>Available?</h3>
+  <p>{{oneGear.gear.availability}}</p>
 </div>
-<a *ngIf="auth.user"routerLink="/my-dashboard">Return to Dashboard</a>
-<a *ngIf="!auth.user"routerLink="/gear">Return to Gear</a>
+<button *ngIf="auth.user && auth.user.id != oneGear.gear.user_id" (click)='requestLoan(oneGear.gear)' class="button">Request To Loan</button><br>
+<br>
+<h2 *ngIf="success">Your request has been submitted to the owner of this {{oneGear.gear.title}}!</h2>
+<a *ngIf="auth.user" routerLink="/my-dashboard">Return to Dashboard</a>
+<a *ngIf="!auth.user" routerLink="/gear">Return to Gear</a>

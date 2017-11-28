@@ -54,6 +54,17 @@ export class GearsService {
     return this.http.delete(environment.apiServer + '/gears/' + gear.id, config)
   }
 
+  requestLoan(gearId, ownerId, borrowerId) {
+    let loan = {
+      'loan': {
+        'borrower_id': borrowerId,
+        'owner_id': ownerId,
+        'gear_id': gearId
+      }
+    }
+    return this.http.post(environment.apiServer + '/loans', loan)
+  }
+
   constructor(private http: Http, public auth : AuthService) { }
 
 }
