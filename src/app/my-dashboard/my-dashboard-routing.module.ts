@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { MyDashboardComponent } from './my-dashboard.component';
 import { MyDashboardIndexComponent } from './my-dashboard-index/my-dashboard-index.component';
-
+import { MyDashboardLoansComponent } from './my-dashboard-loans/my-dashboard-loans.component';
 
 const aboutRoutes: Routes = [
     {
@@ -12,6 +12,10 @@ const aboutRoutes: Routes = [
             {
                 path: 'my-gear',
                 component: MyDashboardIndexComponent
+            },
+            {
+                path: 'my-loans',
+                component: MyDashboardLoansComponent
             }
         ]
     }

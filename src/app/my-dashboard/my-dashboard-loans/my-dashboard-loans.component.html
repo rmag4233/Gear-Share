@@ -1,0 +1,38 @@
+<p *ngIf="error">There was an error. Please try again.</p>
+<div *ngIf="myLoans && auth.user">
+  <h1>Gear I've Loaned:</h1>
+<table>
+  <tr>
+    <th>Gear</th>
+    <th>Borrower Email</th>
+    <th>Loan Start</th>
+    <th>Loan End</th>
+    <th>Edit Loan</th>
+  </tr>
+  <tr *ngFor="let loan of myLoans">
+    <td>{{loan.gear.title}}</td>
+    <td>{{loan.borrower.email}}</td>
+    <td>{{loan.loan_start}}</td>
+    <td>{{loan.loan_end}}</td>
+    <td><button class="button" (click)='editLoan(loan)'>Edit Loan</button></td>
+  </tr>
+</table>
+</div>
+
+<div *ngIf="myBorrows && auth.user">
+  <h1>Gear I've Borrowed:</h1>
+<table>
+  <tr>
+    <th>Gear</th>
+    <th>Owner Email</th>
+    <th>Loan Start</th>
+    <th>Loan End</th>
+  </tr>
+  <tr *ngFor="let loan of myBorrows">
+    <td>{{loan.gear.title}}</td>
+    <td>{{loan.owner.email}}</td>
+    <td>{{loan.loan_start}}</td>
+    <td>{{loan.loan_end}}</td>
+  </tr>
+</table>
+</div>

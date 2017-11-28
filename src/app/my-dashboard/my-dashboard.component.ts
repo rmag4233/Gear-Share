@@ -20,6 +20,10 @@ export class MyDashboardComponent implements OnInit {
   }
 
   moveToShow() {
-        this.router.navigate(["my-dashboard/my-gear"])
-			}
+    this.router.navigate(["my-dashboard/my-gear"])
+	}
+
+  moveToLoans() {
+    this.router.navigate(["my-dashboard/my-loans"])
+  }
   }

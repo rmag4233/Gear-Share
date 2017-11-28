@@ -65,6 +65,10 @@ export class GearsService {
     return this.http.post(environment.apiServer + '/loans', loan)
   }
 
+  getAllLoans() {
+    return this.http.get(environment.apiServer + '/loans')
+  }
+
   constructor(private http: Http, public auth : AuthService) { }
 
 }
