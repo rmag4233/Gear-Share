@@ -10,6 +10,7 @@ import { GearsService } from '../gears.service';
 export class GearShowComponent implements OnInit {
 
 	oneGear;
+  error: any;
 
   constructor(
   	private route : ActivatedRoute,
@@ -20,9 +21,10 @@ export class GearShowComponent implements OnInit {
   	this.route.params.forEach( param => {
   		this.gearsService.getOneGear(param.id)
   		.subscribe(response => {
-  			console.log(response.json());
   			this.oneGear = response.json();
-  		});
+        this.error = null
+  		},
+      err => this.error = err);
   	});
   }
 

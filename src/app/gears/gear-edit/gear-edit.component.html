@@ -1,5 +1,5 @@
 <h2>Update Gear</h2>
-
+<p *ngIf="error">There was an error. Please try again.</p>
 <form (ngSubmit)="updateGear(updatedGear)" ngNativeValidate>
   <label for="title">Title:</label>
   <input required name="title" [(ngModel)]="updatedGear.title" required>

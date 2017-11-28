@@ -9,13 +9,16 @@ import { GearsService } from '../gears.service'
 export class GearIndexComponent implements OnInit {
 
   allGears = [];
+  error: any;
 
   deleteGear(deletedGear) {
     this.gearsService.deleteGear(deletedGear)
     .subscribe(response => {
       let gearIndex = this.allGears.indexOf(deletedGear);
       this.allGears.splice(gearIndex, 1);
-    });
+      this.error = null
+    },
+    err => this.error = err);
   }
 
   constructor(private gearsService : GearsService) { }
@@ -23,9 +26,11 @@ export class GearIndexComponent implements OnInit {
   ngOnInit() {
     this.gearsService.getAllGears()
     .subscribe(response => {
-				console.log(response.json().gears);
-				this.allGears = response.json().gears
-			});
+				this.allGears = response.json().gears;
+        this.error = null
+			},
+      err => this.error = err
+    );
   }
 
 }

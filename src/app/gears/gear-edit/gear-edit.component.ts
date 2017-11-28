@@ -10,6 +10,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 export class GearEditComponent implements OnInit {
 
   updatedGear = <any>{};
+  error: any;
 
   constructor(
     private route : ActivatedRoute,
@@ -21,20 +22,21 @@ export class GearEditComponent implements OnInit {
     this.route.params.forEach( param => {
       this.gearsService.getOneGear(param.id)
       .subscribe(response => {
-        console.log(response.json());
         this.updatedGear = response.json();
-      });
+        this.error = null
+      },
+      err => this.error = err);
     });
   }
 
   updateGear(updatedGear) {
-    console.log('updated Gear ID is ', this.updatedGear.gear.id)
     this.gearsService.updateGear(this.updatedGear.title, this.updatedGear.description, this.updatedGear.price, this.updatedGear.availability, this.updatedGear.image_URL, this.updatedGear.gear.id)
     .subscribe(response => {
-      console.log(response.json());
       let gear = response.json();
-      this.router.navigate(["/gear/" + gear.gear.id])
-    })
+      this.router.navigate(["/gear/" + gear.gear.id]);
+      this.error = null
+    },
+    err => this.error = err)
   }
 
 }

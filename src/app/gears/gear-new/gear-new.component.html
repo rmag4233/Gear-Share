@@ -1,5 +1,7 @@
 <h2>Add New Gear For Rent</h2>
-<form (ngSubmit)="saveGear(newGear)" ngNativeValidate>
+<p *ngIf="error">There was an error. Please try again.</p>
+<p *ngIf="!auth.user">Please log in to add</p>
+<form (ngSubmit)="saveGear(newGear)">
   <label for="title">Title:</label>
   <input name="title" [(ngModel)]="newGear.title" required>
   <br>

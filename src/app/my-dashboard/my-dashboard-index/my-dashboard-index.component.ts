@@ -10,13 +10,16 @@ import { AuthService } from '../../services/auth/auth.service';
 export class MyDashboardIndexComponent implements OnInit {
 
   myGears = [];
+  error: any;
 
   deleteGear(deletedGear) {
     this.gearsService.deleteGear(deletedGear)
     .subscribe(response => {
       let gearIndex = this.myGears.indexOf(deletedGear);
       this.myGears.splice(gearIndex, 1);
-    });
+      this.error = null
+    },
+    err => this.error = err);
   }
 
   constructor(private gearsService : GearsService, public auth : AuthService) { }
@@ -24,13 +27,14 @@ export class MyDashboardIndexComponent implements OnInit {
   ngOnInit() {
     this.gearsService.getAllGears()
     .subscribe(response => {
-        console.log(response.json().gears);
         let allGear = response.json().gears
         for (let i = 0; i < allGear.length; i++) {
           if (allGear[i].user_id === this.auth.user.id) {
             this.myGears.push(allGear[i])
           }
         }
-      });
+        this.error = null
+      },
+      err => this.error = err);
     }
   }

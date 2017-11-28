@@ -10,12 +10,13 @@
         <li><a routerLink="/">gearShare</a></li>
         <li *ngIf="!auth.user"><a routerLink="login">login</a></li>
         <li *ngIf="auth.user"><a routerLink="login">sign out</a></li>
-        <li *ngIf="auth.user"><a routerLink="my-dashboard">myDashboard</a></li>
-        <li><a routerLink="gear">gear</a></li>
+        <li *ngIf="auth.user"><a routerLink="my-dashboard">myGear</a></li>
+        <li><a routerLink="gear">allGear</a></li>
       </ul>
     </nav>
   </header>
   <main>
+    <p *ngIf="!auth.user">Welcome to gearShare, an online community that connects musicians looking to share equipment. If you need gear in a pinch, you've come to the right place!</p>
     <router-outlet></router-outlet>
   </main>
   <footer>

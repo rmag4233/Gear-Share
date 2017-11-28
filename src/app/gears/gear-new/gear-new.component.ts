@@ -11,6 +11,7 @@ import { AuthService } from '../../services/auth/auth.service'
 export class GearNewComponent implements OnInit {
 
   newGear = <any>{};
+  error: any;
 
   constructor(
     private gearsService : GearsService,
@@ -22,13 +23,13 @@ export class GearNewComponent implements OnInit {
   }
 
   saveGear(newGear) {
-  	console.log(this.newGear.title);
   	this.gearsService.saveGear(this.newGear.title, this.newGear.description, this.newGear.price, this.newGear.availability, this.newGear.image_URL)
   			.subscribe(response => {
-			console.log(response.json());
 			let gear = response.json();
 			this.router.navigate(["/gear/" + gear.gear.id]);
-		})
+      this.error = null
+		},
+    err => this.error = err)
   }
 
 }
