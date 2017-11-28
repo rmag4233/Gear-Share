@@ -28,8 +28,8 @@
   <p *ngIf="auth.success">Password is successfully updated.</p>
   <h3>Change Password:</h3>
   <form ngNativeValidate>
-    <input [(ngModel)]="oldPassword" type="password" name="old-password" required placeholder="Old"/>
-    <input [(ngModel)]="newPassword" type="password" name="new-password" required placeholder="New"/>
+    <input [(ngModel)]="oldPassword" type="password" name="old-password" placeholder="Old"/>
+    <input [(ngModel)]="newPassword" type="password" name="new-password" placeholder="New"/>
     <input (click)="changePassword()" type="submit" required value="Change"/>
   </form>
 </div>
