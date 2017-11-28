@@ -14,6 +14,10 @@ export class GearsService {
 		return this.http.get(environment.apiServer + '/gears/' + gearId);
 	}
 
+  getOneLoan(loanId) {
+		return this.http.get(environment.apiServer + '/loans/' + loanId);
+	}
+
   saveGear(title: string, description: string, price: string, availability: string, image_URL: string) {
     let gear = {
       'gear': {
@@ -46,6 +50,21 @@ export class GearsService {
     let config = {}
     config['headers'] = { Authorization: 'Token token=' + this.getUserToken()}
     return this.http.patch(environment.apiServer + '/gears/' + id, gear, config)
+  }
+
+  updateLoan(borrowerId, ownerId, gearId, loan_start, loan_end, loanId) {
+    let loan = {
+      'loan': {
+        'borrower_id': borrowerId,
+        'owner_id': ownerId,
+        'gear_id': 1,
+        'loan_start': '2014-01-02',
+        'loan_end': '2014-03-04'
+      }
+    }
+    let config = {}
+    config['headers'] = { Authorization: 'Token token=' + this.getUserToken()}
+    return this.http.patch(environment.apiServer + '/loans/' + loanId, loan, config)
   }
 
   deleteGear(gear) {
