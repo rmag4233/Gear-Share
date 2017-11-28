@@ -6,3 +6,5 @@
 	<h3>Price: {{oneGear.gear.price}}</h3>
 	<h3>Available? {{oneGear.gear.availability}}</h3>
 </div>
+<a *ngIf="auth.user"routerLink="/my-dashboard">Return to Dashboard</a>
+<a *ngIf="!auth.user"routerLink="/gear">Return to Gear</a>

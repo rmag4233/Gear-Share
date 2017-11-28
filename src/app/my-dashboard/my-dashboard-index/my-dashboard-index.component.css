@@ -27,3 +27,17 @@ img {
     cursor: pointer;
     align-items: center;
 }
+
+.button-delete {
+    background-color: #F64E5B;
+    border: none;
+    color: white;
+    padding: 5px 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 10px;
+    margin: 4px 2px;
+    cursor: pointer;
+    align-items: center;
+}
