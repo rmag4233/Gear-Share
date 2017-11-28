@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { GearsService } from '../../gears/gears.service';
 import { AuthService } from '../../services/auth/auth.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-my-dashboard-loans',
@@ -13,11 +14,7 @@ export class MyDashboardLoansComponent implements OnInit {
   myBorrows = [];
   error: any;
 
-  editLoan(loan) {
-    console.log('this worked on this loan ', loan)
-  }
-
-  constructor(private gearsService : GearsService, public auth : AuthService) { }
+  constructor(private gearsService : GearsService, public auth : AuthService, private router : Router) { }
 
   ngOnInit() {
     this.gearsService.getAllLoans()

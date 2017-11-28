@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { MyDashboardComponent } from './my-dashboard.component';
 import { MyDashboardIndexComponent } from './my-dashboard-index/my-dashboard-index.component';
 import { MyDashboardLoansComponent } from './my-dashboard-loans/my-dashboard-loans.component';
+import { MyDashboardLoanEditComponent } from './my-dashboard-loan-edit/my-dashboard-loan-edit.component'
 
 const aboutRoutes: Routes = [
     {
@@ -16,6 +17,10 @@ const aboutRoutes: Routes = [
             {
                 path: 'my-loans',
                 component: MyDashboardLoansComponent
+            },
+            {
+                path: 'my-loans/loan/:id',
+                component: MyDashboardLoanEditComponent
             }
         ]
     }

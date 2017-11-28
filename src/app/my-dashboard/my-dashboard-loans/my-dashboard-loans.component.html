@@ -14,7 +14,9 @@
     <td>{{loan.borrower.email}}</td>
     <td>{{loan.loan_start}}</td>
     <td>{{loan.loan_end}}</td>
-    <td><button class="button" (click)='editLoan(loan)'>Edit Loan</button></td>
+    <td><a routerLink="loan/{{loan.id}}"><button class="button">
+      Edit Loan
+    </button></a></td>
   </tr>
 </table>
 </div>
