@@ -25,9 +25,7 @@ export class LoginComponent implements OnInit {
   }
 
   signIn() {
-    this.auth.signIn(this.user.email, this.user.password);
-    this.user.email = '';
-    this.user.password = ''
+    this.auth.signIn(this.user.email, this.user.password)
   }
 
   changePassword() {
@@ -37,9 +35,6 @@ export class LoginComponent implements OnInit {
   }
 
   signUp(){
-    this.auth.signUp(this.newUser.email, this.newUser.password, this.newUser.password_confirmation);
-    this.newUser.email = '';
-    this.newUser.password = '';
-    this.newUser.password_confirmation = ''
+    this.auth.signUp(this.newUser.email, this.newUser.password, this.newUser.password_confirmation)
   }
 }

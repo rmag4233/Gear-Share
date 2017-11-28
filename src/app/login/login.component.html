@@ -2,21 +2,21 @@
 <div *ngIf="!auth.user" class="container">
   <p *ngIf="auth.error">There was an error. Please try again.</p>
   <h3>Sign Up:</h3>
-  <form ngNativeValidate>
+  <form #ngNativeValidate="ngForm">
     <input [(ngModel)]="newUser.email" type="email" name="email" required placeholder="Email"/>
     <input [(ngModel)]="newUser.password" type="password" name="password" required placeholder="Password"/>
     <input [(ngModel)]="newUser.password_confirmation" name="password-confirmation" required type="password" placeholder="Confirm Passsword"/>
-    <input (click)="signUp()" type="submit" value="Sign Up"/>
+    <input (click)="signUp(); ngNativeValidate.reset()" type="submit" value="Sign Up"/>
   </form>
 </div>
 <br>
 
 <div *ngIf="!auth.user" class="container">
   <h3>Sign In:</h3>
-  <form ngNativeValidate>
+  <form #ngNativeValidate="ngForm">
     <input [(ngModel)]="user.email" type="email" name="email" required placeholder="Email"/>
     <input [(ngModel)]="user.password" type="password" name="password-confirmation" required placeholder="Password"/>
-    <input (click)="signIn()" type="submit" value="Log in"/>
+    <input (click)="signIn(); ngNativeValidate.reset()" type="submit" value="Log in"/>
   </form>
 </div>
 <br>
@@ -27,10 +27,10 @@
   <p *ngIf="auth.error">There was an error. Please try again.</p>
   <p *ngIf="auth.success">Password is successfully updated.</p>
   <h3>Change Password:</h3>
-  <form ngNativeValidate>
-    <input [(ngModel)]="oldPassword" type="password" name="old-password" placeholder="Old"/>
-    <input [(ngModel)]="newPassword" type="password" name="new-password" placeholder="New"/>
-    <input (click)="changePassword()" type="submit" required value="Change"/>
+  <form #ngNativeValidate="ngForm">
+    <input [(ngModel)]="oldPassword" type="password" name="old-password" required placeholder="Old"/>
+    <input [(ngModel)]="newPassword" type="password" name="new-password" required placeholder="New"/>
+    <input (click)="changePassword(); ngNativeValidate.reset()" type="submit" value="Change"/>
   </form>
 </div>
 <br>
