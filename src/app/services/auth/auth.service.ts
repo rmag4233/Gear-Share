@@ -8,7 +8,9 @@ import { environment } from '../../../environments/environment';
 
 @Injectable()
 export class AuthService {
-  user: any
+  user: any;
+  error: any;
+  success: any;
 
   constructor(
     private http: Http
@@ -31,8 +33,9 @@ export class AuthService {
     this.http.post(environment.apiServer + '/sign-in', credentials)
       .subscribe(
         // Save the response to user
-        response => this.user = JSON.parse(response['_body']).user,
-        err => console.log(err)
+        response => {this.user = JSON.parse(response['_body']).user;
+        this.error = null},
+        err => this.error = err
       )
   }
 
@@ -52,9 +55,10 @@ export class AuthService {
       .subscribe(
         response => {
           // Send the existing credentials back to the server to log in the new user
-          this.signIn(credentials.credentials.email, credentials.credentials.password)
+          this.signIn(credentials.credentials.email, credentials.credentials.password);
+          this.error = null
         },
-        err => console.log(err)
+        err => this.error = err
       )
   }
 
@@ -69,8 +73,10 @@ export class AuthService {
     this.http.delete(environment.apiServer + '/sign-out/' + this.user.id, config)
       .subscribe(
         // Remove the logged in user.
-        data => this.user = null,
-        err => console.log(err)
+        data => {this.user = null;
+        this.error = null;
+        this.success = null},
+        err => this.error = err
       )
   }
 
@@ -93,8 +99,14 @@ export class AuthService {
     // Make the patch request to URL, add the password data and token from Config.
     this.http.patch(environment.apiServer + '/change-password/' + this.user.id, passwords, config)
       .subscribe(
-        data => console.log('Success'),
-        err => console.log(err)
+        data => {
+          this.success = data;
+          this.error = null
+        },
+        err => {
+          this.error = err;
+          this.success = null
+        }
       )
   }
 }

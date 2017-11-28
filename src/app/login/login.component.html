@@ -1,5 +1,6 @@
 <div class="login-form">
 <div *ngIf="!auth.user" class="container">
+  <p *ngIf="auth.error">There was an error. Please try again.</p>
   <h3>Sign Up:</h3>
   <form ngNativeValidate>
     <input [(ngModel)]="newUser.email" type="email" name="email" required placeholder="Email"/>
@@ -22,8 +23,9 @@
 </div>
 
 <div class="signed-in">
-
 <div *ngIf="auth.user" class="container">
+  <p *ngIf="auth.error">There was an error. Please try again.</p>
+  <p *ngIf="auth.success">Password is successfully updated.</p>
   <h3>Change Password:</h3>
   <form ngNativeValidate>
     <input [(ngModel)]="oldPassword" type="password" name="old-password" required placeholder="Old"/>
@@ -39,6 +41,6 @@
 </div>
 <br>
 <br>
-<div *ngIf="auth.user" class="container">I see a user!!! <strong>{{auth.user.email}}</strong></div>
+<div *ngIf="auth.user" class="container">Logged in as: <strong>{{auth.user.email}}</strong></div>
 
 </div>
