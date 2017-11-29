@@ -28,8 +28,9 @@
           Edit
         </button>
         </a>
-        <button class="button-delete" (click)='deleteGear(gear)'>Delete</button>
+        <button class="button-delete" data-toggle="confirmation" tooltip="Please note, deleting this gear will also delete any loans associated to it." (click)='deleteGear(gear)'>Delete</button>
       </li>
     </ul>
+
   </div>
 </div>

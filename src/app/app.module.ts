@@ -14,6 +14,10 @@ import { MyDashboardComponent } from './my-dashboard/my-dashboard.component';
 
 import { AuthService } from './services/auth/auth.service';
 
+import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
+import { TooltipModule } from 'ngx-bootstrap/tooltip';
+import { ModalModule } from 'ngx-bootstrap/modal';
+
 
 @NgModule({
   declarations: [
@@ -29,7 +33,10 @@ import { AuthService } from './services/auth/auth.service';
     GearsModule,
     GearsRoutingModule,
     MyDashboardModule,
-    MyDashboardRoutingModule
+    MyDashboardRoutingModule,
+    BsDropdownModule.forRoot(),
+    TooltipModule.forRoot(),
+    ModalModule.forRoot()
   ],
   providers: [AuthService],
   bootstrap: [AppComponent]
