@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { GearsService } from '../gears.service';
 import { ActivatedRoute, Router } from '@angular/router';
+import { AuthService } from '../../services/auth/auth.service';
 
 @Component({
   selector: 'app-gear-edit',
@@ -15,7 +16,8 @@ export class GearEditComponent implements OnInit {
   constructor(
     private route : ActivatedRoute,
     private router : Router,
-    private gearsService : GearsService
+    private gearsService : GearsService,
+    private auth : AuthService
   ) { }
 
   ngOnInit() {

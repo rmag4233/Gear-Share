@@ -1,3 +1,4 @@
+<div *ngIf="auth.user">
 <h2>Update Gear</h2>
 <p *ngIf="error">There was an error. Please try again.</p>
 <form (ngSubmit)="updateGear(updatedGear)" ngNativeValidate>
@@ -20,3 +21,4 @@
   <input type="submit" value="Update">
 </form><br>
 <a routerLink="/my-dashboard">Return to Dashboard</a>
+</div>
