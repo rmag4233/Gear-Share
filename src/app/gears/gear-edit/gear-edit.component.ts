@@ -17,7 +17,7 @@ export class GearEditComponent implements OnInit {
     private route : ActivatedRoute,
     private router : Router,
     private gearsService : GearsService,
-    private auth : AuthService
+    public auth : AuthService
   ) { }
 
   ngOnInit() {
