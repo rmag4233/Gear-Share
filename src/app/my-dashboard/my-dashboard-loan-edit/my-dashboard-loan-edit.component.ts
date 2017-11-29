@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { GearsService } from '../../gears/gears.service';
+import { AuthService } from '../../services/auth/auth.service';
 
 @Component({
   selector: 'app-my-dashboard-loan-edit',
@@ -15,7 +16,8 @@ export class MyDashboardLoanEditComponent implements OnInit {
 
   constructor(private router : Router,
               private route : ActivatedRoute,
-              private gearsService : GearsService) { }
+              private gearsService : GearsService,
+              public auth : AuthService) { }
 
   ngOnInit() {
     this.route.params.forEach( param => {

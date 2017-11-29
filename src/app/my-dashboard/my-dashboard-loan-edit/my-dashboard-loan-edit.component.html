@@ -1,17 +1,19 @@
-<h2>Update Loan:</h2>
-<p *ngIf="error">There was an error. Please try again.</p>
-<p *ngIf="loan">This loan has been successfully updated.</p>
-<form (ngSubmit)="updateLoan(updatedLoan); ngNativeValidate.reset()" #ngNativeValidate="ngForm">
-  <label for="loan_gear">Loaned Gear: {{updatedLoan.loan.gear.title}}</label>
-<br>
-  <label for="loan_borrower">Borrower's Email: {{updatedLoan.loan.borrower.email}}</label>
-<br>
-  <label for="loan_start">Loan Start Date:</label>
-  <input type="date" required name="loan_start" [(ngModel)]="updatedLoan.loan_start" value="{{updatedLoan.loan.loan_start}}"required>
-<br>
-  <label for="loan_end">Loan End Date:</label>
-  <input type="date" required name="loan_end" [(ngModel)]="updatedLoan.loan_end" value="{{updatedLoan.loan.loan_end}}" required>
-<br>
-  <input type="submit" value="Update">
-</form><br>
-<a routerLink="/my-dashboard">Return to Dashboard</a>
+<div *ngIf="auth.user">
+  <h2>Update Loan:</h2>
+  <p *ngIf="error">There was an error. Please try again.</p>
+  <p *ngIf="loan">This loan has been successfully updated.</p>
+  <form (ngSubmit)="updateLoan(updatedLoan); ngNativeValidate.reset()" #ngNativeValidate="ngForm">
+    <label for="loan_gear">Loaned Gear: {{updatedLoan.loan.gear.title}}</label>
+  <br>
+    <label for="loan_borrower">Borrower's Email: {{updatedLoan.loan.borrower.email}}</label>
+  <br>
+    <label for="loan_start">Loan Start Date:</label>
+    <input type="date" required name="loan_start" [(ngModel)]="updatedLoan.loan_start" value="{{updatedLoan.loan.loan_start}}"required>
+  <br>
+    <label for="loan_end">Loan End Date:</label>
+    <input type="date" required name="loan_end" [(ngModel)]="updatedLoan.loan_end" value="{{updatedLoan.loan.loan_end}}" required>
+  <br>
+    <input type="submit" value="Update">
+  </form><br>
+  <a routerLink="/my-dashboard">Return to Dashboard</a>
+</div>
