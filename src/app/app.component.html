@@ -7,7 +7,8 @@
   <header>
     <nav>
       <ul>
-        <li><a routerLink="/">gearShare</a></li>
+        <li>
+          <img src="https://d2gg9evh47fn9z.cloudfront.net/800px_COLOURBOX5745375.jpg" alt="gears" width="40px" height="40px"><a routerLink="/">gearShare</a></li>
         <li *ngIf="!auth.user"><a routerLink="login">login</a></li>
         <li *ngIf="auth.user"><a routerLink="login">sign out</a></li>
         <li *ngIf="auth.user"><a routerLink="my-dashboard">myDashboard</a></li>
