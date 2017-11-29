@@ -17,13 +17,15 @@ import { AuthService } from './services/auth/auth.service';
 import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 import { TooltipModule } from 'ngx-bootstrap/tooltip';
 import { ModalModule } from 'ngx-bootstrap/modal';
+import { SearchComponent } from './search/search.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
-    MyDashboardComponent
+    MyDashboardComponent,
+    SearchComponent
   ],
   imports: [
     BrowserModule,

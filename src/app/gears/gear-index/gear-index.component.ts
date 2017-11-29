@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { GearsService } from '../gears.service'
+import { GearsService } from '../gears.service';
 
 @Component({
   selector: 'app-gear-index',
@@ -10,8 +10,6 @@ export class GearIndexComponent implements OnInit {
 
   allGears = [];
   error: any;
-  searchedGear = [];
-  search: any;
 
   deleteGear(deletedGear) {
     this.gearsService.deleteGear(deletedGear)
@@ -21,10 +19,6 @@ export class GearIndexComponent implements OnInit {
       this.error = null
     },
     err => this.error = err);
-  }
-
-  searchGear(search) {
-    console.log('search is ', search)
   }
 
   constructor(private gearsService : GearsService) { }

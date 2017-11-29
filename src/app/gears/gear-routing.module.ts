@@ -6,7 +6,6 @@ import { GearNewComponent } from './gear-new/gear-new.component';
 import { GearEditComponent } from './gear-edit/gear-edit.component';
 import { GearShowComponent } from './gear-show/gear-show.component';
 
-
 const aboutRoutes: Routes = [
     {
         path: 'gear',
@@ -28,6 +27,7 @@ const aboutRoutes: Routes = [
                 path: ':id',
                 component: GearShowComponent
             }
+
         ]
     }
 ];
