@@ -3,7 +3,7 @@
 <p *ngIf="error">There was an error. Please try again.</p>
 <h4 *ngIf="myGears.length == 0 && !error && auth.user">Click Add Gear To Start Sharing</h4>
 <div class="gears">
-  <div class="row" *ngFor="let gear of myGears">
+  <div class="row-gear" *ngFor="let gear of myGears">
     <ul style="list-style: none;">
       <li>
         <h2>
@@ -28,7 +28,7 @@
           Edit
         </button>
         </a>
-        <button class="button-delete" data-toggle="confirmation" tooltip="Please note, deleting this gear will also delete any loans associated to it." (click)='deleteGear(gear)'>Delete</button>
+        <button class="button-delete" data-toggle="confirmation" tooltip="Please note, deleting this gear will also delete record of any loans associated to it." (click)='deleteGear(gear)'>Delete</button>
       </li>
     </ul>
 

@@ -1,13 +1,13 @@
-.container {
+/*.container {
     display: inline-block;
     text-align: center;
     position:relative;
     left:50%;
     top:50%;
     margin-left:-200px;
-}
+}*/
 
-.login-form {
+/*.login-form {
   display: inline-block;
   text-align: center;
   position:relative;
@@ -23,4 +23,4 @@
   left:50%;
   top:50%;
   margin-left:200px;
-}
+}*/
