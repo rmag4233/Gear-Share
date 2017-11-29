@@ -2,7 +2,7 @@
     background-color: #549EED;
     border: none;
     color: white;
-    padding: 15px 32px;
+    padding: 10px 22px;
     text-align: center;
     text-decoration: none;
     display: inline-block;
@@ -10,4 +10,8 @@
     margin: 4px 2px;
     cursor: pointer;
     align-items: center;
+}
+
+.contact {
+  display: inline;
 }

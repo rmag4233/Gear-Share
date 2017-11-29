@@ -9,7 +9,10 @@
 	<h3>Available?</h3>
   <p>{{oneGear.gear.availability}}</p>
 </div>
-<button *ngIf="auth.user && auth.user.id != oneGear.gear.user_id" (click)='requestLoan(oneGear.gear)' class="button">Request To Loan</button><br>
+<div *ngIf="auth.user && auth.user.id != oneGear.gear.user_id" class="contact">
+<button (click)='requestLoan(oneGear.gear)' class="button">Request To Loan</button>
+<a href='mailto:{{oneGear.gear.user.email}}?body=Hello, &subject=Interested in borrowing your {{oneGear.gear.title}}'><button class="button">Contact {{oneGear.gear.user.email}}</button></a>
+</div>
 <br>
 <h2 *ngIf="success">Your request has been submitted to the owner of this {{oneGear.gear.title}}!</h2>
 <a *ngIf="auth.user" routerLink="/my-dashboard">Return to Dashboard</a>

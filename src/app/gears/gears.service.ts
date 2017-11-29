@@ -81,6 +81,8 @@ export class GearsService {
         'gear_id': gearId
       }
     }
+    let config = {}
+    config['headers'] = { Authorization: 'Token token=' + this.getUserToken()}
     return this.http.post(environment.apiServer + '/loans', loan)
   }
 
