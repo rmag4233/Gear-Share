@@ -11,6 +11,7 @@ export class GearIndexComponent implements OnInit {
   allGears = [];
   error: any;
   searchedGear = [];
+  search: any;
 
   deleteGear(deletedGear) {
     this.gearsService.deleteGear(deletedGear)
