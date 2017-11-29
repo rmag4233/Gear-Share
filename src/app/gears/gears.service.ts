@@ -57,9 +57,9 @@ export class GearsService {
       'loan': {
         'borrower_id': borrowerId,
         'owner_id': ownerId,
-        'gear_id': 1,
-        'loan_start': '2014-01-02',
-        'loan_end': '2014-03-04'
+        'gear_id': gearId,
+        'loan_start': loan_start,
+        'loan_end': loan_end
       }
     }
     let config = {}

@@ -29,6 +29,7 @@ export class GearEditComponent implements OnInit {
     });
   }
 
+
   updateGear(updatedGear) {
     this.gearsService.updateGear(this.updatedGear.title, this.updatedGear.description, this.updatedGear.price, this.updatedGear.availability, this.updatedGear.image_URL, this.updatedGear.gear.id)
     .subscribe(response => {

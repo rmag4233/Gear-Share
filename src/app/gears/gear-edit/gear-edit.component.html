@@ -2,20 +2,20 @@
 <p *ngIf="error">There was an error. Please try again.</p>
 <form (ngSubmit)="updateGear(updatedGear)" ngNativeValidate>
   <label for="title">Title:</label>
-  <input required name="title" [(ngModel)]="updatedGear.title" required>
+  <input required name="title" [(ngModel)]="updatedGear.title" value="{{updatedGear.gear.title}}" required>
 <br>
   <label for="description">Description:</label>
-  <input required name="description" [(ngModel)]="updatedGear.description" required>
+  <input required name="description" [(ngModel)]="updatedGear.description" value="{{updatedGear.gear.description}}" required>
 <br>
   <label for="price">Price:</label>
-  <input required name="price" [(ngModel)]="updatedGear.price" required>
+  <input required name="price" [(ngModel)]="updatedGear.price" value="{{updatedGear.gear.price}}" required>
 <br>
   <label for="availability">Available for rent?:</label>
   <input type="radio" name="availability" value="Yes" [(ngModel)]="updatedGear.availability"> Yes
   <input type="radio" name="availability" value="No" [(ngModel)]="updatedGear.availability"> No<br>
 
   <label for="image_URL">Photograph:</label>
-  <input required name="image_URL" [(ngModel)]="updatedGear.image_URL" required>
+  <input required name="image_URL" [(ngModel)]="updatedGear.image_URL" value="{{updatedGear.gear.image_URL}}" required>
 <br>
   <input type="submit" value="Update">
 </form><br>
