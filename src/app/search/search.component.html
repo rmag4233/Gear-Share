@@ -1,11 +1,24 @@
 <h2 *ngIf="searchedGear.length >= 1">Search Results:</h2>
 <p *ngIf="error">There was an error. Please try again.</p>
 
-<section>
+<div>
+  <div class="col-md-11">
+    <input [(ngModel)]='search' class="form-control" type="text" placeholder="Search Gear" (keyup)='searchGear(search)'/>
+  </div>
+  <div class="col-md-1">
+    <span class="glyphicon glyphicon-search"></span>
+  </div>
+</div>
+<br>
+<br>
+<br>
+
+<!-- code below removed as it puts the glyphicon on a different line than the input. code below improves looks -->
+<!-- <section>
     <input [(ngModel)]='search' class="form-control" type="text" placeholder="Search Gear" (keyup)='searchGear(search)'/>
     <span class="glyphicon glyphicon-search"></span>
 </section>
-<br>
+<br> -->
 
 <h4 *ngIf="searchedGear.length == 0 && search.length > 4 && !error">Please refine your search or try again</h4>
 
