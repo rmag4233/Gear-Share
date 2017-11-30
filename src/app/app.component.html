@@ -17,6 +17,7 @@
       </ul>
     </nav>
   </header>
+  <img *ngIf="router.url != '/login' && router.url != '/gear' && router.url != '/search' && !auth.user" class="hero" src="https://ak5.picdn.net/shutterstock/videos/12800105/thumb/1.jpg" alt="hero">
   <main>
     <h4 *ngIf="!auth.user">Welcome to gearShare, an online community that connects musicians looking to share equipment. If you need gear in a pinch, you've come to the right place!</h4>
     <router-outlet></router-outlet>
