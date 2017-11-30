@@ -23,3 +23,8 @@
 .img-circle {
     border-radius: 50%;
 }
+
+.dashboard {
+  width: 1000px;
+  margin: 0 auto;
+}
