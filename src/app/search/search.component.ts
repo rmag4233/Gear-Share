@@ -15,6 +15,7 @@ export class SearchComponent implements OnInit {
   searchedGear = [];
   search: string;
   allGear = [];
+  error: any;
 
   searchGear(search) {
     if (search === ''){
@@ -33,7 +34,9 @@ export class SearchComponent implements OnInit {
   ngOnInit() {
       this.gearsService.getAllGears()
       .subscribe(response => {
-        this.allGear = response.json().gears
-      })
+        this.allGear = response.json().gears;
+        this.error = null
+      },
+      err => this.error = err);
     }
   }
