@@ -18,9 +18,12 @@ export class SearchComponent implements OnInit {
   error: any;
 
   searchGear(search) {
-    if (search === ''){
-      this.searchedGear = []
-    }
+    // if (search === ''){
+    //   this.searchedGear = []
+    // }
+    // commenting out above code and adding the clearing of the array each time
+    // this function is called because otherwise we see multiple results of same object
+    this.searchedGear = []
     for (let i = 0; i < this.allGear.length; i++) {
       if (this.allGear[i].title !== null &&
         this.allGear[i].title.toLowerCase() === this.search.toLowerCase()) {
