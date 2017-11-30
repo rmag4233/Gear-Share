@@ -7,7 +7,7 @@
 </section>
 <br>
 
-<h4 *ngIf="searchedGear.length == 0 && search.length > 0 && !error">Looks like there are no matches</h4>
+<h4 *ngIf="searchedGear.length == 0 && search.length > 4 && !error">Please refine your search or try again</h4>
 
 <div class="gears">
   <div class="row-gear" *ngFor="let gear of searchedGear">
